@@ -1,0 +1,49 @@
+#app {
+    padding-top: 10px;
+}
+
+a {
+    color: black;
+}
+
+#left {
+    width: 50%;
+    height: 500px;
+    float: left;
+}
+
+#right {
+    margin-left: 50%;
+    height: 500px;
+    float: right;
+}
+
+#main {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+body {
+    align-items: center;
+    float: none;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    justify-content: center;
+    font-family: courier,arial,helvetica;
+    background-color: white;
+    height: 100%;
+}
+
+.set {
+    padding-bottom: 20px;
+    
+}
+
+#verification {
+    float: top;
+    width: 100%;
+}
