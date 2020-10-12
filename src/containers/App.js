@@ -4,6 +4,7 @@ import Output from '../components/Output';
 import Verification from '../components/Verification';
 
 export default function App() {
+    const [data, setData] = useState();
     const [dateVerification, setDateVerification] = useState('...'); //updated after created
     const [reposVerification, setReposVerification] = useState('...'); //reposCount matches reposCount from url
     const [created, setCreated] = useState(); //date of creation
@@ -43,7 +44,7 @@ export default function App() {
             let length = response.length;
             setPublicReposFromUrl(length);
         } catch (Exception) {
-            console.log('invalid URL');
+            console.log('can not reach page');
         } 
     }
 
@@ -51,6 +52,7 @@ export default function App() {
         try {
             const res = await fetch('https://api.github.com/orgs/BoomTownROI');
             let response = await res.json();
+            setData(response);
             setCreated(response.created_at);
             setPublicRepos(response.public_repos);
             setReposUrl(response.repos_url);
@@ -73,7 +75,7 @@ export default function App() {
     
     useEffect(() => {
         fetchData();
-    }, [created])
+    }, [data])
 
     return (
         <div id='app'> 
